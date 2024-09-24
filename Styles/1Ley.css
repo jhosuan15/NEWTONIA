@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --base-clr: #121F2C;
+  --line-clr: #42434a;
+  --side-clr: #192A40;
+  --hover-clr: #5e63ff6b;
+  --text-clr: #e6e6ef;
+  --accent-clr: #5e63ff;
+  --secondary-text-clr: #b0b3c1;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+body{
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--base-clr);
+  color: var(--text-clr);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Ancho del scroll */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--side-clr); /* Color del fondo del scroll */
+}
+
+::-webkit-scrollbar-thumb {
+  height: 500px;
+  background-color: var(--accent-clr); /* Color de la barra de desplazamiento */
+}
+
+#sidebar{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 350px;
+  padding: 5px 1em;
+  background-color: var(--side-clr);
+  border-right: 1px solid var(--side-clr);
+
+  position: sticky;
+  top: 0;
+  align-self: start;
+  transition: 300ms ease-in-out;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+#sidebar.close{
+  padding: 5px;
+  width: 60px;
+}
+#sidebar ul{
+  list-style: none;
+}
+#sidebar > ul > li:first-child{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  .logo{
+    font-weight: 600;
+  }
+}
+#sidebar ul li.active a{
+  color: var(--accent-clr);
+
+  svg{
+    fill: var(--accent-clr);
+  }
+}
+
+#sidebar a, #sidebar .dropdown-btn, #sidebar .logo{
+  border-radius: .5em;
+  padding: .85em;
+  text-decoration: none;
+  color: var(--text-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.dropdown-btn{
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+#sidebar svg{
+  flex-shrink: 0;
+  fill: var(--text-clr);
+}
+#sidebar a span, #sidebar .dropdown-btn span{
+  flex-grow: 1;
+}
+#sidebar a:hover, #sidebar .dropdown-btn:hover{
+  background-color: var(--hover-clr);
+}
+#sidebar .sub-menu{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+
+  > div{
+    overflow: hidden;
+  }
+}
+#sidebar .sub-menu.show{
+  grid-template-rows: 1fr;
+}
+.dropdown-btn svg{
+  transition: 200ms ease;
+}
+.rotate svg:last-child{
+  rotate: 180deg;
+}
+#sidebar .sub-menu a{
+  padding-left: 2em;
+}
+#toggle-btn{
+  margin-left: auto;
+  padding: 1em;
+  border: none;
+  border-radius: .5em;
+  background: none;
+  cursor: pointer;
+
+  svg{
+    transition: rotate 150ms ease;
+  }
+}
+#toggle-btn:hover{
+  background-color: var(--hover-clr);
+}
+
+main{
+  padding: min(30px, 7%);
+}
+main p{
+  color: var(--secondary-text-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.container{
+  border: 1px solid var(--accent-clr);
+  border-radius: 1em;
+  margin-bottom: 20px;
+  padding: min(3em, 15%);
+  background-color: var(--side-clr);
+  h2, p { margin-top: 1em }
+}
+
+@media(max-width: 800px){
+  body{
+    grid-template-columns: 1fr;
+  }
+  main{
+    padding: 2em 1em 60px 1em;
+  }
+  .container{
+    border: none;
+    padding: 0;
+  }
+  #sidebar{
+    height: 60px;
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid var(--line-clr);
+    padding: 0;
+    position: fixed;
+    top: unset;
+    bottom: 0;
+
+    > ul{
+      padding: 0;
+      display: grid;
+      grid-auto-columns: 60px;
+      grid-auto-flow: column;
+      align-items: center;
+      overflow-x: scroll;
+    }
+    ul li{
+      height: 100%;
+    }
+    ul a, ul .dropdown-btn{
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      border-radius: 0;
+      justify-content: center;
+    }
+
+    ul li span, ul li:first-child, .dropdown-btn svg:last-child{
+      display: none;
+    }
+
+    ul li .sub-menu.show{
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      box-sizing: border-box;
+      height: 60px;
+      width: 100%;
+      background-color: var(--hover-clr);
+      border-top: 1px solid var(--line-clr);
+      display: flex;
+      justify-content: center;
+
+      > div{
+        overflow-x: auto;
+      }
+      li{
+        display: inline-flex;
+      }
+      a{
+        box-sizing: border-box;
+        padding: 1em;
+        width: auto;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*CODIGO PRINCIPAL*/
+
+main{
+  display: flex;
+}
+
+.informacion {
+  width: 50%; /* Ocupa la mitad izquierda */
+  padding: 20px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  overflow-y: auto; /* Permitir desplazamiento si el contenido es largo */
+}
+
+#simulacion {
+  width: 50%; /* Ocupa la mitad derecha */
+  display: flex;
+  flex-direction: column; /* Disposición vertical */
+  padding: 20px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  background-color: var(--side-clr); /* Color de fondo opcional */
+  position: relative; /* Necesario para el movimiento del carro */
+  height: 100%; /* Asegúrate de que el contenedor tenga altura */
+  border-radius: 20px;
+}
+
+.simulador {
+  flex: 1; /* Ocupa todo el espacio restante */
+  display: flex; /* Permite al carro posicionarse */
+  justify-content: center; /* Centra el carro horizontalmente */
+  align-items: flex-end; /* Alinea el carro en la parte inferior */
+  background-image: url('../Pages/Images/calle.png'); /* Ruta de tu imagen de fondo */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+
+#carro {
+  position: absolute;
+  left: 44%; /* Centrar horizontalmente */
+  transform: translateX(-50%) rotate(270deg); /* Ajustar para centrar y rotar */
+  width: 100px; /* Ajusta según el tamaño de tu imagen */
+  height: auto; /* Mantener proporciones de la imagen */
+}
+
+.botones {
+  background-color: transparent;
+  height: 10%; /* Altura fija de 100px */
+  width: 100%;
+  display: flex; /* Disposición horizontal para los botones */
+  justify-content: center; /* Centrar botones horizontalmente */
+  align-items: center; /* Centrar botones verticalmente */
+  border-radius: 20px;
+}
+
+.botones-simulacion {
+  margin: 0 20px;
+  height: 50px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: white;
+  border: 0px;
+  font-weight: bold;
+}

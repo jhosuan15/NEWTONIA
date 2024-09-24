@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWTONIA</title>
+    <link rel="stylesheet" href="../Styles/Newton.css">
+    <script type="text/javascript" src="../Js/index.js" defer></script>
+</head>
+
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="logo">NEWTONIA</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+                    </svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z" />
+                    </svg>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z" />
+                    </svg>
+                    <span>Newton</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z" />
+                    </svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li><a href="Newton.html">Isaac Newton</a></li>
+                        <li><a href="1Ley.html">Primera Ley</a></li>
+                        <li><a href="2Ley.html">Segunda Ley</a></li>
+                        <li><a href="3Ley.html">Tercera Ley</a></li>
+                        <li><a href="4Ley.html">Ley de Gravitación Universal</a></li>
+                    </div>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Biografía de Isaac Newton</h1><br><br><br>
+            <div class="content">
+            <div class="biography">
+                <h2>Información General</h2>
+                <ul>
+                    <li><strong>Nombre Completo:</strong> Sir Isaac Newton</li>
+                    <li><strong>Fecha de Nacimiento:</strong> 25 de diciembre de 1642</li>
+                    <li><strong>Fecha de Fallecimiento:</strong> 31 de marzo de 1727</li>
+                    <li><strong>Lugar de Nacimiento:</strong> Woolsthorpe, Lincolnshire, Inglaterra</li>
+                    <li><strong>Lugar de Fallecimiento:</strong> Kensington, Londres, Inglaterra</li>
+                    <li><strong>Ocupación:</strong> Físico, matemático, astrónomo, filósofo natural, alquimista</li>
+                </ul>
+            </div>
+            <div class="gif">
+                <img src="./Images/newton.gif" alt="">
+            </div>
+        </div>
+            <div class="contributions">
+                <h2>Contribuciones Científicas</h2>
+                <ol>
+                    <li><strong>Cálculo:</strong> Desarrollo independiente del cálculo.</li>
+                    <li><strong>Leyes del Movimiento:</strong> Tres leyes fundamentales de la mecánica clásica.</li>
+                    <li><strong>Gravitación Universal:</strong> Ley que establece la atracción entre todos los cuerpos.</li>
+                    <li><strong>Óptica:</strong> Descubrimiento de la descomposición de la luz blanca en colores.</li>
+                    <li><strong>Telescopio Reflector:</strong> Invención que mejora la observación astronómica.</li>
+                </ol>
+            </div>
+            
+            <div class="personal-life">
+                <h2>Vida Personal</h2>
+                <p>
+                    Newton nunca se casó y no tuvo hijos. Era conocido por ser reservado y solitario. Fue profesor de matemáticas en Cambridge y presidente de la Royal Society. 
+                </p>
+            </div>
+    
+            <div class="legacy">
+                <h2>Legado y Muerte</h2>
+                <p>
+                    Newton es considerado uno de los científicos más influyentes de todos los tiempos, y su trabajo sentó las bases para la física moderna. 
+                    Falleció el 31 de marzo de 1727 y fue enterrado en la Abadía de Westminster.
+                </p>
+            </div>
+    
+            <div class="important-data">
+                <h2>Datos Importantes</h2>
+                <ul>
+                    <li><strong>Obras Publicadas:</strong> *Mathematical Principles of Natural Philosophy* (1687), *Opticks* (1704)</li>
+                    <li><strong>Aportes a la Matemática y la Física:</strong> Desarrollo del cálculo, formulación de leyes del movimiento, estudios sobre la luz.</li>
+                    <li><strong>Premios y Distinciones:</strong> Caballero de la Orden del Baño, presidente de la Royal Society.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
