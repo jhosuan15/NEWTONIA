@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEWTONIA</title>
-    <link rel="stylesheet" href="../Styles/2Ley.css">
+    <link rel="stylesheet" href="../Styles/MRU.css">
     <script type="text/javascript" src="../Js/index.js" defer></script>
-    <script type="text/javascript" src="../Js/2Ley.js" defer></script>
+    <script type="text/javascript" src="../Js/MRU.js" defer></script>
 </head>
 
 <body>
@@ -83,29 +83,72 @@
     </nav>
     <main>
         <div class="informacion">
-            <h1 style="line-height: 1.5;">Segunda Ley de Newton</h1><br>
-            <p>La aceleración de un objeto es directamente proporcional a la fuerza neta que actúa sobre él e inversamente proporcional a su masa. 
-               Puedes ajustar la masa y la fuerza para ver cómo cambia la aceleración.</p>
-            <label for="masa">Masa (kg): </label><br>
-            <input type="number" id="masa" value="5" min="1" max="100">
-            <br>
-            <label for="fuerza">Fuerza (N): </label><br>
-            <input type="number" id="fuerza" value="10" min="0" max="100">
+            <h1 style="line-height: 1.5;">Simulación del Movimiento Rectilíneo Uniforme (MRU)</h1>
+
+            <p>El MRU (Movimiento Rectilíneo Uniforme) es un tipo de movimiento en el cual un objeto se desplaza en línea recta a una velocidad constante. Es decir, el objeto recorre distancias iguales en tiempos iguales. En este movimiento no hay aceleración, ya que la velocidad no cambia a lo largo del tiempo.</p>
             
-            <p>Aceleración: <span id="aceleracion">2</span> m/s²</p>
-            <button class="boton" id="calcular">Calcular</button>
+            <select id="opcion-calculo">
+                <option value="velocidad" selected>Velocidad</option>
+                <option value="distancia">Distancia</option>
+                <option value="tiempo">Tiempo</option>
+            </select>
+            <div id="inputs-dinamicos">
+                <input type="number" id="distancia" placeholder="Distancia (m)" />
+                <input type="number" id="tiempo" placeholder="Tiempo (s)" />
+                <input type="number" id="velocidad" placeholder="Velocidad (m/s)"/>
+            </div>
+    
+        <button id="calcular" class="botones-simulacion">Calcular</button>
+        <p id="resultado"></p>
+        <br>
+            <h2>Características del MRU:</h2>
+            <ul>
+                <li><strong>Velocidad constante:</strong> La velocidad no varía, lo que implica que no hay aceleración.</li>
+                <li><strong>Trayectoria rectilínea:</strong> El objeto se mueve en línea recta.</li>
+            </ul>
+            <br>
+            <h2>Fórmula básica del MRU:</h2>
+            <p>La fórmula del MRU es: <strong>v = d / t</strong></p>
+            
+            <p>Donde:</p>
+            <ul>
+                <li><strong>v</strong> es la velocidad (constante) del objeto (m/s).</li>
+                <li><strong>d</strong> es la distancia recorrida (m).</li>
+                <li><strong>t</strong> es el tiempo que el objeto tarda en recorrer esa distancia (s).</li>
+            </ul>
+            <br>
+            <h2>Reorganización de la fórmula:</h2>
+            <p>Para calcular la distancia:</p>
+            <p><strong>d = v ⋅ t</strong></p>
+            <p>Para calcular el tiempo:</p>
+            <p><strong>t = d / v</strong></p>
+            <br>
+            <h2>Aplicaciones del MRU:</h2>
+            <ul>
+                <li>Se utiliza para describir movimientos simples, como el de un tren que se desplaza a velocidad constante.</li>
+                <li>En simulaciones educativas, para entender conceptos básicos de física.</li>
+                <li>En problemas de movimiento que no involucran aceleración.</li>
+            </ul>
+            
+        <br>
+         
+              
         </div>
         
         <div id="simulacion">
             <div class="simulador">
-                <img id="carro" src="./Images/cohete.png" alt="Carro" class="objeto">
+                <img src="./Images/Car.png" alt="Carro" id="objeto-mru">    
             </div>
+        
             <div class="botones">
-                <button class="botones-simulacion" id="iniciar">Iniciar</button>
-                <button class="botones-simulacion" id="reiniciar">Reiniciar</button>
+                <button id="iniciar-simulacion" class="botones-simulacion">Iniciar Simulación</button>
+                <button id="reiniciar-simulacion" class="botones-simulacion">Reiniciar</button>
             </div>
         </div>        
     </main>
+    
+    
+    
 </body>
 
 </html>

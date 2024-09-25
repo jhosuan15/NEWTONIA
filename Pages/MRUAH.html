@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEWTONIA</title>
-    <link rel="stylesheet" href="../Styles/2Ley.css">
+    <link rel="stylesheet" href="../Styles/MRUAH.css">
     <script type="text/javascript" src="../Js/index.js" defer></script>
-    <script type="text/javascript" src="../Js/2Ley.js" defer></script>
+    <script type="text/javascript" src="../Js/MRUAH.js" defer></script>
 </head>
 
 <body>
@@ -81,31 +81,74 @@
             </li>
         </ul>
     </nav>
-    <main>
-        <div class="informacion">
-            <h1 style="line-height: 1.5;">Segunda Ley de Newton</h1><br>
-            <p>La aceleración de un objeto es directamente proporcional a la fuerza neta que actúa sobre él e inversamente proporcional a su masa. 
-               Puedes ajustar la masa y la fuerza para ver cómo cambia la aceleración.</p>
-            <label for="masa">Masa (kg): </label><br>
-            <input type="number" id="masa" value="5" min="1" max="100">
-            <br>
-            <label for="fuerza">Fuerza (N): </label><br>
-            <input type="number" id="fuerza" value="10" min="0" max="100">
-            
-            <p>Aceleración: <span id="aceleracion">2</span> m/s²</p>
-            <button class="boton" id="calcular">Calcular</button>
+<main>
+    <div class="informacion">
+        <h1 style="line-height: 1.5;">Simulación del Movimiento Rectilíneo Uniformemente Acelerado Horizontal (MRUA)</h1>
+        <p>El MRUA (Movimiento Rectilíneo Uniformemente Acelerado) es un tipo de movimiento en el cual un objeto se desplaza en línea recta con una aceleración constante. Esto significa que su velocidad cambia de manera uniforme a lo largo del tiempo.</p>
+        
+        <select id="opcion-calculo">
+            <option value="velocidad" selected>Velocidad final</option>
+            <option value="distancia">Distancia</option>
+            <option value="tiempo">Tiempo</option>
+            <option value="aceleracion">Aceleración</option>
+            <option value="velocidad-inicial">Velocidad Inicial</option>
+        </select>
+        
+        <div id="inputs-dinamicos">
+            <input type="number" id="distancia" placeholder="Distancia (m)" />
+            <input type="number" id="tiempo" placeholder="Tiempo (s)" />
+            <input type="number" id="velocidad-inicial" placeholder="Velocidad Inicial (m/s)"/>
+            <input type="number" id="velocidad-final" placeholder="Velocidad Final (m/s)"/>
+            <input type="number" id="aceleracion" placeholder="Aceleración (m/s²)"/>
         </div>
         
-        <div id="simulacion">
-            <div class="simulador">
-                <img id="carro" src="./Images/cohete.png" alt="Carro" class="objeto">
-            </div>
-            <div class="botones">
-                <button class="botones-simulacion" id="iniciar">Iniciar</button>
-                <button class="botones-simulacion" id="reiniciar">Reiniciar</button>
-            </div>
-        </div>        
-    </main>
+        <button id="calcular" class="botones-simulacion">Calcular</button>
+        <p id="resultado"></p>
+        
+        <br>
+        <h2>Características del MRUA:</h2>
+        <ul>
+            <li><strong>Aceleración constante:</strong> La aceleración del objeto permanece constante a lo largo del tiempo.</li>
+            <li><strong>Trayectoria rectilínea:</strong> El objeto se mueve en línea recta.</li>
+        </ul>
+        <br>
+        <h2>Fórmulas básicas del MRUA:</h2>
+        <p>La fórmula para la velocidad final es: <strong>v = v<sub>0</sub> + a ⋅ t</strong></p>
+        <p>La fórmula para la distancia es: <strong>d = v<sub>0</sub> ⋅ t + ½ ⋅ a ⋅ t²</strong></p>
+        
+        <p>Donde:</p>
+        <ul>
+            <li><strong>v</strong> es la velocidad final (m/s).</li>
+            <li><strong>v<sub>0</sub></strong> es la velocidad inicial (m/s).</li>
+            <li><strong>a</strong> es la aceleración (m/s²).</li>
+            <li><strong>d</strong> es la distancia recorrida (m).</li>
+            <li><strong>t</strong> es el tiempo que el objeto tarda en recorrer esa distancia (s).</li>
+        </ul>
+        <br>
+        <h2>Aplicaciones del MRUA:</h2>
+        <ul>
+            <li>Se utiliza para describir movimientos de objetos que aceleran o frenan, como un coche que acelera al salir de un semáforo.</li>
+            <li>En simulaciones educativas, para entender conceptos básicos de física relacionados con la aceleración.</li>
+            <li>En problemas de movimiento que involucran aceleración constante.</li>
+        </ul>
+        <br>
+    </div>
+    
+    <div id="simulacion">
+        <div class="simulador">
+            <img src="./Images/avion.png" alt="avion" id="objeto-mrua">    
+        </div>
+    
+        <div class="botones">
+            <button id="iniciar-simulacion" class="botones-simulacion">Iniciar Simulación</button>
+            <button id="reiniciar-simulacion" class="botones-simulacion">Reiniciar</button>
+        </div>
+    </div>        
+</main>
+
+    
+    
+    
 </body>
 
 </html>
